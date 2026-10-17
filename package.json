@@ -1,0 +1,16 @@
+{
+  "name": "flow-runner",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs",
+    "verify": "npm run build && npm test && npm run check && npm run package"
+  },
+  "devDependencies": { "esbuild": "0.28.2" }
+}

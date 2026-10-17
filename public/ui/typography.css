@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../fonts/Vazirmatn.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Apply the bundled face explicitly, including controls and pseudo-elements. */
+html,
+body,
+body *,
+body::before,
+body::after,
+body *::before,
+body *::after {
+  font-family: 'Vazirmatn', sans-serif !important;
+  font-synthesis: none;
+}

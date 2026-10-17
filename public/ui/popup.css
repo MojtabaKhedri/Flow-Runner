@@ -1,0 +1,54 @@
+:root {
+  color-scheme: dark;
+  --background: #202425;
+  --surface: #1d1f20;
+  --raised: #292c2d;
+  --text: #e8e2d8;
+  --muted: #92929e;
+  --line: #4b4b55;
+  --red: #e4002b;
+  --accent: #ff6961;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { width: 390px; max-width: 100%; margin: 0; padding: 10px; background: var(--background); color: var(--text); font-size: 12px; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .55; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+[hidden] { display: none !important; }
+.shell { padding: 18px; border: 1px solid #393d40; border-radius: 12px; background: var(--background); box-shadow: 0 8px 24px #00000024; animation: panel-in .24s ease-out both; }
+.masthead { direction: ltr; display: flex; align-items: center; justify-content: flex-start; gap: 12px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.masthead img { display: block; flex-shrink: 0; }
+.wordmark { color: var(--text); font-size: 18px; font-weight: 700; letter-spacing: normal; }
+.control { display: flex; flex-direction: column; align-items: center; padding: 24px 0 22px; text-align: center; }
+.toggle { display: grid; place-items: center; width: 116px; height: 116px; padding: 9px; border: 1px solid #51525b; border-radius: 50%; background: transparent; transition: border-color .18s; }
+.power-disc { display: grid; place-items: center; width: 100%; height: 100%; border: 1px solid #54555b; border-radius: 50%; background: #35393b; color: #b7b6be; box-shadow: 0 5px 12px #00000024; transition: background .22s, color .22s, border-color .22s; }
+.toggle svg { display: block; }
+.toggle[aria-checked=true] .power-disc { background: var(--red); border-color: var(--red); color: #fff; }
+.toggle:hover:not(:disabled) { border-color: #7a7b84; }
+.toggle[aria-checked=true]:hover:not(:disabled) .power-disc { background: #ce0027; border-color: #ce0027; }
+.toggle:active:not(:disabled) { border-color: #92929e; }
+#enabled-label { color: var(--text); font-size: 17px; line-height: 1.7; margin: 12px 0 0; font-weight: 600; }
+.actions { display: flex; flex-direction: column; gap: 8px; }
+.primary { display: flex; align-items: center; justify-content: flex-start; gap: 12px; width: 100%; background: var(--red); color: #fff; border: 1px solid var(--red); border-radius: 8px; padding: 11px 14px; font-weight: 600; font-size: 13px; line-height: 1.8; box-shadow: 0 3px 10px #0000001a; transition: background .18s, border-color .18s, transform .18s, box-shadow .18s; }
+.primary-arrow { font-size: 23px; line-height: 1; transition: transform .18s; }
+.primary:hover { background: #bd0024; border-color: #bd0024; transform: translateY(-1px); box-shadow: 0 5px 14px #e4002b24; }
+.primary:hover .primary-arrow { transform: translate(-1px, -1px); }
+.primary:active { transform: translateY(0); }
+.secondary { background: transparent; border: 1px solid var(--line); border-radius: 7px; color: var(--text); padding: 7px; }
+.secondary:hover { background: var(--raised); border-color: var(--accent); }
+.notice, .error { font-size: 10px; line-height: 1.9; border-radius: 7px; padding: 9px; margin: 10px 0 0; }
+.notice { color: var(--text); background: var(--raised); border: 1px solid #414348; }
+.error:empty { display: none; }
+.error { background: #35272a; color: #ffa9a1; border: 1px solid #75434a; }
+footer { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 14px; padding-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+footer button, footer a { padding: 0; border: 0; background: transparent; color: var(--muted); font: inherit; font-weight: 500; text-decoration: none; }
+footer button:hover, footer a:hover { color: var(--text); text-decoration: underline; }
+@keyframes panel-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .primary:hover, .primary:active, .primary:hover .primary-arrow { transform: none; }
+}
